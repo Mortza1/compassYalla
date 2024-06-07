@@ -11,7 +11,7 @@ const TopVid = () => {
           src={gifSrc}
           alt="Background Animation"
         />
-        <div className="relative z-10 py-[20px] px-15 w-[250px] border-[2px] rounded-[8px] text-[30px] text-white w-[350px] text-center bg-[#1B1431] bg-opacity-70 ">
+        <div className="relative z-10 py-[25px] px-15 w-[250px] border-[2px] rounded-[8px] text-[30px] text-white w-[350px] text-center bg-[#1B1431] bg-opacity-70 ">
           COMPASS ABU-DHABI 2024
         </div>
       </div>

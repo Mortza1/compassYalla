@@ -58,11 +58,15 @@ const LiveStreamPlayer = () => {
   return (
     <>
       <div className="video w-full h-[450px] bg-[#1B1431] flex justify-around items-center">
-        <iframe
-          title="Twitch Stream"
-          src="https://player.twitch.tv/?channel=valorant&parent=localhost"
-          width="640" height="360" frameborder="8" scrolling="no" allowfullscreen
-        ></iframe>
+      <div class="rounded-[12px] overflow-hidden h-[360px] w-[640px]">
+      <iframe
+        title="Twitch Stream"
+        src="https://player.twitch.tv/?channel=valorant&parent=localhost"
+        width="640" height="360" frameborder="0" scrolling="no" allowfullscreen
+        class="w-full h-full"
+      ></iframe>
+    </div>
+
         <div className="quiz w-[30%] h-[360px] border rounded-[20px] flex-col items-center">
           <div className="title text-center text-white text-[19px] font-bold pt-3">Quiz</div>
           <div className="title text-center text-white text-[20px] font-bold pt-3">{quiz.question}</div>
@@ -73,8 +77,8 @@ const LiveStreamPlayer = () => {
           </div>
         </div>
       </div>
-      <div className="summ bg-[#1B1431] w-full h-[450px]">
-        <div className="title flex justify-center text-white font-bold text-[35px]">
+      <div className="summ bg-[#1B1431] w-full min-h-[200px]">
+        <div className="title flex justify-center text-white font text-[35px]">
           10 minutes recap
         </div>
         <div className="title w-full text-center px-9 py-8 flex justify-center text-white font-regular text-[20px]">

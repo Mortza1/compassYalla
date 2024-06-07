@@ -6,11 +6,6 @@ import sponsor2 from '../Images/sponsor2.png';
 import sponsor3 from '../Images/sponsor3.png';
 import sponsor4 from '../Images/sponsor4.png';
 import sponsor5 from '../Images/sponsor5.png';
-import sponsor6 from '../Images/sponsor6.png';
-import sponsor7 from '../Images/sponsor7.png';
-import sponsor8 from '../Images/sponsor8.png';
-import sponsor9 from '../Images/sponsor9.png';
-
 
 
 const Sponsors = () => {
@@ -20,10 +15,6 @@ const Sponsors = () => {
     sponsor3,
     sponsor4,
     sponsor5,
-    sponsor6,
-    sponsor7,
-    sponsor8,
-    sponsor9,
   ];
   
   return (
