@@ -1,41 +1,61 @@
-import os
-from moviepy.editor import *
-from transformers import pipeline
+import asyncio
+import websockets
+import pyaudio
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch  
 
-def extract_audio_and_transcribe(video_path):
-    # Load the video
-    clip = VideoFileClip(video_path)
-    
-    # Extract audio from the video
-    audio_clip = clip.audio
-    audio_filename = "temp_audio.wav"
-    audio_clip.write_audiofile(audio_filename)
-    
-    # Function to split audio and transcribe
-    def process_audio_segment(segment_start, segment_end):
-        # Extract segment
-        start_time = int(segment_start * 1000)  # Convert to milliseconds
-        end_time = int(segment_end * 1000)  # Convert to milliseconds
-        audio_clip.subclip(start_time, end_time).write_audiofile(f"segment_{start_time}_{end_time}.flac")
-        
-        # Transcribe the segment
-        transcription = pipe(f"segment_{start_time}_{end_time}.flac")
-        print(transcription)
-        
-        # Delete the temporary audio file
-        os.remove(f"segment_{start_time}_{end_time}.flac")
-    
-    # Calculate segments
-    total_duration = len(audio_clip)
-    num_segments = int(total_duration / 600)  # Assuming 10 minutes per segment
-    
-    # Process each segment
-    for i in range(num_segments):
-        start_time = i * 600  # Start time of the segment (in seconds)
-        end_time = start_time + 600  # End time of the segment (in seconds)
-        process_audio_segment(start_time, end_time)
+model_id = "meta-llama/Meta-Llama-3-8B-Instruct"
 
-if __name__ == "__main__":
-    video_path = "path_to_your_video.mp4"  # Replace with your video path
-    pipe = pipeline("automatic-speech-recognition", model="openai/whisper-large-v3")
-    extract_audio_and_transcribe(video_path)
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    torch_dtype=torch.bfloat16,
+    device_map="auto",
+)
+
+messages = [
+    {"role": "system", "content": "You are a text summarizer. Take the text and note important names, scenes and locations and output a concise summary."},
+]
+
+input_ids = tokenizer.apply_chat_template(
+    messages,
+    add_generation_prompt=True,
+    return_tensors="pt"
+).to(model.device)
+
+terminators = [
+    tokenizer.eos_token_id,
+    tokenizer.convert_tokens_to_ids("<|eot_id|>")
+]
+
+outputs = model.generate(
+    input_ids,
+    max_new_tokens=256,
+    eos_token_id=terminators,
+    do_sample=True,
+    temperature=0.6,
+    top_p=0.9,
+)
+response = outputs[0][input_ids.shape[-1]:]
+print(tokenizer.decode(response, skip_special_tokens=True))
+
+
+async def listen_for_audio(api_key):
+    p = pyaudio.PyAudio()
+    stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=1024)
+    stream.start_stream()
+
+    uri = f"wss://api.assemblyai.com/v2/realtime/ws?key={api_key}"
+    async with websockets.connect(uri) as websocket:
+        timestamp = 0
+        while True:
+            chunk = stream.read(1024)
+            await websocket.send(chunk)
+            result = await websocket.recv()
+            print(result)
+            timestamp += 300  # Increment timestamp by 5 minutes (300 seconds)
+            if timestamp % 300 == 0:  # Check if 5 minutes have passed
+                # Generate summary here
+                pass
+
+asyncio.get_event_loop().run_until_complete(listen_for_audio('YOUR_API_KEY'))
