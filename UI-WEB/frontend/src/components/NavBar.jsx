@@ -59,10 +59,10 @@ const NavBar = () => {
       <div className="w-full flex items-center bg-[#1B1431] h-[90px] justify-between px-9 border-b border-white">
       <a href="/"><img src={logo} alt="" className="h-[50%]" /></a>
       <div className="nav flex gap-10 text-white">
-        <div className="a"><a href="/">Home</a></div>
-        <div className="a"><a href="/about">About</a></div>
-        <div className="a"><a href="/live">Stream</a> </div>
-        <div className="a"><a href="/shop">Shop</a></div>
+        <div className="a text-[25px]"><a href="/">HOME</a></div>
+        <div className="a text-[25px]"><a href="/about">ABOUT</a></div>
+        <div className="a text-[25px]"><a href="/live">STREAM</a> </div>
+        <div className="a text-[25px]"><a href="/shop">SHOP</a></div>
       </div>
       <div className="flex items-center gap-4">
       {data.balance}
