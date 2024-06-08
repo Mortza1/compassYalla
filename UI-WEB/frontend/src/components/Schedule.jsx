@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 
 // Map team names to their corresponding logo paths
 const teamLogos = {
-  "FaZe": "../assets/faze.png",
-  "SAW": "../assets/saw.png",
-  "Natus Vincere": "../assets/natusvincere.png",
-  "Astralis": "../assets/astralis.png",
-  "Vitality": "../assets/vitality.png",
-  "Virtus.pro": "../assets/virtuspro.png",
-  "Spirit": "../assets/spirit.png",
-  "G2": "../assets/g2.png",
+  "FaZe": "../Images/faze.png",
+  "SAW": "../Images/saw.png",
+  "Natus Vincere": "../Images/natusvincere.png",
+  "Astralis": "../Images/astralis.png",
+  "Vitality": "../Images/vitality.png",
+  "Virtus.pro": "../Images/virtuspro.png",
+  "Spirit": "../Images/spirit.png",
+  "G2": "../Images/g2.png",
 };
 
 const scheduleData = {

@@ -10,7 +10,7 @@ const NavBar = () => {
       <img src={logo} alt="" className="h-[50%]" />
       <div className="nav flex gap-10 text-white">
         <div className="a"><a href="/">Home</a></div>
-        <div className="a">About</div>
+        <div className="a"><a href="/about">About</a></div>
         <div className="a"><a href="/live">Stream</a> </div>
         <div className="a">Shop</div>
       </div>

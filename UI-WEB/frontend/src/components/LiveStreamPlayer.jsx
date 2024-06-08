@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Cards from "../components/Cards";
+import Streams from "../components/Stream";
 
 const LiveStreamPlayer = () => {
   const [quiz, setQuiz] = useState({});
@@ -86,6 +87,7 @@ const LiveStreamPlayer = () => {
         </div>
       </div>
       <Cards />
+      <Streams />
     </>
   );
 };
