@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import LiveStream from "./pages/livestream";
 import AboutStatement from "./components/AboutStatement";
 import ShopPage from "./components/ShopPage";
+import Copyright from "./components/Copyright";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<AboutStatement />} />
           <Route path="/shop" element={<ShopPage />} />
         </Routes>
+        <Copyright/>
       </div>
     </>
   );

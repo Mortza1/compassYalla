@@ -56,7 +56,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="w-full flex items-center bg-[#1B1431] h-[90px] justify-between px-9 border-b border-white">
+      <div className="w-full flex items-center bg-[#1B1431] h-[90px] justify-between px-9 border-b border-white ">
       <a href="/"><img src={logo} alt="" className="h-[50%]" /></a>
       <div className="nav flex gap-10 text-white">
         <div className="a text-[25px]"><a href="/">HOME</a></div>

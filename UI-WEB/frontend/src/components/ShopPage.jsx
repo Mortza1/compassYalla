@@ -6,6 +6,7 @@ const ShopPage = () => {
           <section className='w-full h-[140vh] bg-yellow-500 '>
             <div className="title text-center font-bold text-[40px] pt-5">
                 <p>SHOP</p>
+                POWERED BY BITSKINS 
             </div>
             <div className="cards flex flex-wrap gap-9 pt-9 px-9 justify-center">
             <div className="item rounded-[40px] w-[190px] h-[229px] bg-white border-[4px] border-black">

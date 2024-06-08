@@ -4,6 +4,7 @@ import Statement from "./Statement";
 import Topvid from "./topvid";
 import Schedule from "./Schedule";
 
+
 const HomeHero = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const HomeHero = () => {
         </div>
         <Schedule />
         <Sponsors />
+        
         
         
     </>
