@@ -6,6 +6,7 @@ const LiveStreamPlayer = () => {
   const [quiz, setQuiz] = useState({});
   const [usedQuestions, setUsedQuestions] = useState([]);
   const [currentSummary, setCurrentSummary] = useState("");
+  const [timer, setTimer] = useState(600); // Initialize timer to 600 seconds
   const questionsList = [
     {
       question: "Who won the Nobel Peace Prize in 2017?",
@@ -50,11 +51,21 @@ const LiveStreamPlayer = () => {
     const quizIntervalId = setInterval(generateNewQuiz, 180000);
     const summaryIntervalId = setInterval(generateNewSummary, 30000);
 
+    const timerId = setInterval(() => {
+      if (timer > 0) {
+        setTimer(timer - 1);
+      } else {
+        clearInterval(timerId);
+      }
+    }, 1000);
+
     return () => {
       clearInterval(quizIntervalId);
       clearInterval(summaryIntervalId);
+      clearInterval(timerId);
     };
   }, []);
+
 
   return (
     <>
@@ -62,13 +73,13 @@ const LiveStreamPlayer = () => {
       <div class="rounded-[12px] overflow-hidden h-[360px] w-[640px]">
       <iframe
         title="Twitch Stream"
-        src="https://player.twitch.tv/?channel=valorant&parent=localhost"
+        src="https://player.twitch.tv/?channel=zekken&parent=localhost"
         width="640" height="360" frameborder="0" scrolling="no" allowfullscreen
         class="w-full h-full"
       ></iframe>
     </div>
 
-        <div className="quiz w-[30%] h-[360px] border rounded-[20px] flex-col items-center">
+        <div className={`quiz w-[30%] h-[360px] border rounded-[20px] flex-col items-center ${timer <= 60? 'animate-borderChange' : ''}`}>
           <div className="title text-center text-white text-[19px] font-bold pt-3">Quiz</div>
           <div className="title text-center text-white text-[20px] font-bold pt-3">{quiz.question}</div>
           <div className="options gap-4 pt-6">

@@ -13,6 +13,15 @@ module.exports = {
         'top-blue': '0 -5px 0px rgba(0, 0, 255)', 
         'top-darkRed': '0 -5px 0px #B60C0C'// Adjust values as needed
       },
+      keyframes: {
+        borderChange: {
+          '0%': { borderColor: '#ffffff' },
+          '100%': { borderColor: '#ff0000' },
+        },
+      },
+      animation: {
+        borderChange: 'borderChange 10s linear infinite',
+      },
     },
   },
   // plugins: [],
