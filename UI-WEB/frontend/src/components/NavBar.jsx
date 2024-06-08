@@ -5,7 +5,7 @@ import { ethers } from "ethers";
 
 const NavBar = () => {  
   const [data, setdata] = useState({
-    address: "",
+    address: "", 
     Balance: null,
 });
 

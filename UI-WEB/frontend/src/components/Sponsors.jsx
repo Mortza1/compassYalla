@@ -21,7 +21,7 @@ const Sponsors = () => {
       <section id="sponsors" className="bg-white py-8">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 text-black">Our Partners</h2>
-          <div className="flex flex-wrap justify-center items-center">
+          <div className="flex flex-row justify-center items-center">
             {sponsors.map((sponsor, index) => (
               <div key={index} className="w-1/2 sm:w-1/4 lg:w-1/5 p-4">
                 <img src={sponsor} alt={`Sponsor ${index + 1}`} className="mx-auto h-20" />
