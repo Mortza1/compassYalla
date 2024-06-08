@@ -1,0 +1,18 @@
+import Web3 from 'web3';
+
+// Assuming you have the ABI and contract address
+const web3 = new Web3(Web3.givenProvider || 'http://localhost:8545');
+const contractAddress = 'YOUR_CONTRACT_ADDRESS';
+const contractABI = []; // Your contract ABI goes here
+
+const contract = new web3.eth.Contract(contractABI, contractAddress);
+
+// Function to call mint from your smart contract
+async function mintTokens(amount) {
+    const accounts = await web3.eth.getAccounts();
+    const result = await contract.methods.mint(accounts[0], amount).send({ from: accounts[0] });
+    console.log(result);
+}
+
+// Call mintTokens with the desired amount of tokens to be rewarded
+mintTokens(100); // Example: rewarding 100 tokens

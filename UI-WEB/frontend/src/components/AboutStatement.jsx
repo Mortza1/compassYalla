@@ -1,4 +1,5 @@
 import React from 'react';
+// import Carousal from "./Carousel";
 
 const AboutStatement = () => {
     return (
@@ -23,10 +24,11 @@ const AboutStatement = () => {
               <div className="title text-black text-center pt-9 text-[34px]">
                 <p>PREVIOUS EVENTS</p>
               </div>
-              <div className='flex flex-row h-[250px] pt-9 pb-10 justify-center gap-6 border-b border-black border-{10px}"'>
+              <div className='flex flex-row h-[280px] pt-9 pb-10 justify-center gap-6 border-b border-black border-{10px}"'>
                 <img src="/Images/about.png" alt="" />
                 <img src="/Images/about.png" alt="" />
               </div>
+              {/* <Corousal /> */}
               <div className="title text-black text-center pt-[50px] text-[34px]">
                 <p>CEO OF YALLA ESPORTS</p>
               </div>
