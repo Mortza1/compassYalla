@@ -85,7 +85,7 @@ const LiveStreamPlayer = () => {
       ></iframe>
     </div>
 
-        <div className={`quiz w-[30%] h-[360px] border rounded-[20px] flex-col items-center ${timer <= 60? 'animate-borderChange' : ''}`}>
+        <div className={`quiz w-[30%] h-[360px] border rounded-[20px] flex-col items-center  ${timer <= 60? 'animate-borderChange' : ''}`}>
           <div className="title text-center text-white text-[19px] font-bold pt-3">Quiz</div>
           <div className="title text-center text-white text-[20px] font px-2 pt-3">{quiz.question}</div>
           <div className="options gap-4 pt-6">

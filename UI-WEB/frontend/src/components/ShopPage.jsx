@@ -26,60 +26,6 @@ const ShopPage = () => {
                     <p>46.5</p>
                 </div>
                 </div>
-                <div className="item rounded-[40px] w-[190px] h-[229px] bg-white border-[4px] border-black">
-                    <div className='rounded-[40px] pt-1 px-1'>
-                        <img src="/Images/gun.png" alt="" className="w-full h-full object-cover rounded-[40px]"/>
-                    </div>
-                <div className="text text-center pt-2 ">
-                    <p className='text-[1.2rem]'>Gun Skin</p>
-                    <p>46.5</p>
-                </div>
-                </div>
-                <div className="item rounded-[40px] w-[190px] h-[229px] bg-white border-[4px] border-black">
-                    <div className='rounded-[40px] pt-1 px-1'>
-                        <img src="/Images/gun.png" alt="" className="w-full h-full object-cover rounded-[40px]"/>
-                    </div>
-                <div className="text text-center pt-2 ">
-                    <p className='text-[1.2rem]'>Gun Skin</p>
-                    <p>46.5</p>
-                </div>
-                </div>
-                <div className="item rounded-[40px] w-[190px] h-[229px] bg-white border-[4px] border-black">
-                    <div className='rounded-[40px] pt-1 px-1'>
-                        <img src="/Images/gun.png" alt="" className="w-full h-full object-cover rounded-[40px]"/>
-                    </div>
-                <div className="text text-center pt-2 ">
-                    <p className='text-[1.2rem]'>Gun Skin</p>
-                    <p>46.5</p>
-                </div>
-                </div>
-                <div className="item rounded-[40px] w-[190px] h-[229px] bg-white border-[4px] border-black">
-                    <div className='rounded-[40px] pt-1 px-1'>
-                        <img src="/Images/gun.png" alt="" className="w-full h-full object-cover rounded-[40px]"/>
-                    </div>
-                <div className="text text-center pt-2 ">
-                    <p className='text-[1.2rem]'>Gun Skin</p>
-                    <p>46.5</p>
-                </div>
-                </div>
-                <div className="item rounded-[40px] w-[190px] h-[229px] bg-white border-[4px] border-black">
-                    <div className='rounded-[40px] pt-1 px-1'>
-                        <img src="/Images/gun.png" alt="" className="w-full h-full object-cover rounded-[40px]"/>
-                    </div>
-                <div className="text text-center pt-2 ">
-                    <p className='text-[1.2rem]'>Gun Skin</p>
-                    <p>46.5</p>
-                </div>
-                </div>
-                <div className="item rounded-[40px] w-[190px] h-[229px] bg-white border-[4px] border-black">
-                    <div className='rounded-[40px] pt-1 px-1'>
-                        <img src="/Images/gun.png" alt="" className="w-full h-full object-cover rounded-[40px]"/>
-                    </div>
-                <div className="text text-center pt-2 ">
-                    <p className='text-[1.2rem]'>Gun Skin</p>
-                    <p>46.5</p>
-                </div>
-                </div>
             </div>
           </section>
         </>
