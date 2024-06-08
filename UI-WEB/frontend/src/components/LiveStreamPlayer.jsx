@@ -1,3 +1,8 @@
+// The api which takes returns summary and a quiz is implemented in the pythonBack folder. However, due to
+// lack of a valid source of a audio stream, it hasn't been applied. This can be fixed if the company
+// provides with thier audio stream.
+
+
 import React, { useState, useEffect } from "react";
 import Cards from "../components/Cards";
 import Streams from "../components/Stream";
@@ -7,6 +12,7 @@ const LiveStreamPlayer = () => {
   const [usedQuestions, setUsedQuestions] = useState([]);
   const [currentSummary, setCurrentSummary] = useState("");
   const [timer, setTimer] = useState(600); // Initialize timer to 600 seconds
+
   const questionsList = [
     {
       question: "Who was the MVP in the last match?",
