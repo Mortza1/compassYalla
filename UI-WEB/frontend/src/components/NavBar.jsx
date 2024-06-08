@@ -74,7 +74,7 @@ const NavBar = () => {
         {/* Image inside the circle */}
         <button onClick={btnhandler}
                 variant="primary">
-        <img src='Images/cat.jpg' alt="Sample Image" className="object-cover"/>
+        <img src='/Images/cat.jpg' alt="Sample Image" className="object-cover"/>
         </button>
         
       </div>
