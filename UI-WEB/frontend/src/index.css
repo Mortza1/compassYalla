@@ -34,13 +34,13 @@ body {
 
 @font-face {
   font-family: Montserrat;
-  src: url(./fonts/yeezy_tstar-bold-webfont.ttf);
+  src: url(./fonts/VCR_OSD_MONO_1.001.ttf);
   font-weight: 500;
 
 }
 
 @font-face {
-  font-family: Montserrat;
+  font-family: Product;
   src: url(./fonts/yeezy_tstar-bold-webfont.ttf);
   font-weight: 800;
 }

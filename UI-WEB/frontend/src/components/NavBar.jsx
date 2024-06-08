@@ -57,7 +57,7 @@ const NavBar = () => {
   return (
     <>
       <div className="w-full flex items-center bg-[#1B1431] h-[90px] justify-between px-9 border-b border-white">
-      <img src={logo} alt="" className="h-[50%]" />
+      <a href="/"><img src={logo} alt="" className="h-[50%]" /></a>
       <div className="nav flex gap-10 text-white">
         <div className="a"><a href="/">Home</a></div>
         <div className="a"><a href="/about">About</a></div>
@@ -74,7 +74,7 @@ const NavBar = () => {
         {/* Image inside the circle */}
         <button onClick={btnhandler}
                 variant="primary">
-        <img src='/Images/cat.jpg' alt="Sample Image" className="object-cover"/>
+        <img src='../Images/cat.jpg' alt="Sample Image" className="object-cover"/>
         </button>
         
       </div>

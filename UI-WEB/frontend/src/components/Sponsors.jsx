@@ -1,11 +1,11 @@
 // src/components/Sponsors.jsx
 import React from 'react';
 // Adjusted imports to go back 3 folders
-import sponsor1 from '../../Images/sponsor1.png';
-import sponsor2 from '/Images/sponsor2.png';
-import sponsor3 from '/Images/sponsor3.png';
-import sponsor4 from '/Images/sponsor4.png';
-import sponsor5 from '/Images/sponsor5.png';
+import sponsor1 from '../Images/sponsor1.png';
+import sponsor2 from '../Images/sponsor2.png';
+import sponsor3 from '../Images/sponsor3.png';
+import sponsor4 from '../Images/sponsor4.png';
+import sponsor5 from '../Images/sponsor5.png';
 
 
 const Sponsors = () => {

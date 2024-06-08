@@ -23,7 +23,7 @@ const AboutStatement = () => {
               <div className="title text-black text-center pt-9 text-[34px]">
                 <p>PREVIOUS EVENTS</p>
               </div>
-              <div className='flex flex-row h-[250px] pt-9 justify-center gap-6'>
+              <div className='flex flex-row h-[250px] pt-9 pb-10 justify-center gap-6 border-b border-black border-{10px}"'>
                 <img src="/Images/about.png" alt="" />
                 <img src="/Images/about.png" alt="" />
               </div>
