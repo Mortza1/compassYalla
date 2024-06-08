@@ -79,7 +79,7 @@ const LiveStreamPlayer = () => {
       <div class="rounded-[12px] overflow-hidden h-[360px] w-[640px]">
       <iframe
         title="Twitch Stream"
-        src="https://player.twitch.tv/?channel=eslcs&parent=localhost"
+        src="https://player.twitch.tv/?channel=compass_cs2&parent=localhost"
         width="640" height="360" frameborder="0" scrolling="no" allowfullscreen
         class="w-full h-full"
       ></iframe>
