@@ -9,16 +9,16 @@ const LiveStreamPlayer = () => {
   const [timer, setTimer] = useState(600); // Initialize timer to 600 seconds
   const questionsList = [
     {
-      question: "Who won the Nobel Peace Prize in 2017?",
-      options: ["Nelson Mandela", "Malala Yousafzai"]
+      question: "Who was the MVP in the last match?",
+      options: ["Answer 1", "Answer 2"]
     },
     {
-      question: "What is the largest planet in our solar system?",
-      options: ["Jupiter", "Saturn"]
+      question: "What stretegy did team A use?",
+      options: ["A", "B"]
     },
     {
-      question: "What is the chemical symbol for gold?",
-      options: ["Au", "Ag"]
+      question: "What kind of skin does this player has?",
+      options: ["Black", "StocK"]
     }
   ];
   const summaryTexts = [
@@ -73,7 +73,7 @@ const LiveStreamPlayer = () => {
       <div class="rounded-[12px] overflow-hidden h-[360px] w-[640px]">
       <iframe
         title="Twitch Stream"
-        src="https://player.twitch.tv/?channel=zekken&parent=localhost"
+        src="https://player.twitch.tv/?channel=eslcs&parent=localhost"
         width="640" height="360" frameborder="0" scrolling="no" allowfullscreen
         class="w-full h-full"
       ></iframe>
@@ -81,7 +81,7 @@ const LiveStreamPlayer = () => {
 
         <div className={`quiz w-[30%] h-[360px] border rounded-[20px] flex-col items-center ${timer <= 60? 'animate-borderChange' : ''}`}>
           <div className="title text-center text-white text-[19px] font-bold pt-3">Quiz</div>
-          <div className="title text-center text-white text-[20px] font-bold pt-3">{quiz.question}</div>
+          <div className="title text-center text-white text-[20px] font px-2 pt-3">{quiz.question}</div>
           <div className="options gap-4 pt-6">
             {quiz.options && quiz.options.map((option, index) => (
               <div key={index} className="bg-gray-200 rounded-[15px] py-6 mx-5 my-4 text-center hover:bg-yellow-500">{option}</div>

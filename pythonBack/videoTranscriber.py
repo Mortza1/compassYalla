@@ -1,15 +1,41 @@
-from twitchrealtimehandler import (TwitchAudioGrabber,
-                                   TwitchImageGrabber)
-import numpy as np
+import os
+from moviepy.editor import *
+from transformers import pipeline
 
-audio_grabber = TwitchAudioGrabber(
-    twitch_url="https://www.twitch.tv/compass_cs2",
-    blocking=True,  # wait until a segment is available
-    segment_length=2,  # segment length in seconds
-    rate=16000,  # sampling rate of the audio
-    channels=2,  # number of channels
-    dtype=np.int16  # quality of the audio could be [np.int16, np.int32, np.float32, np.float64]
-    )
+def extract_audio_and_transcribe(video_path):
+    # Load the video
+    clip = VideoFileClip(video_path)
+    
+    # Extract audio from the video
+    audio_clip = clip.audio
+    audio_filename = "temp_audio.wav"
+    audio_clip.write_audiofile(audio_filename)
+    
+    # Function to split audio and transcribe
+    def process_audio_segment(segment_start, segment_end):
+        # Extract segment
+        start_time = int(segment_start * 1000)  # Convert to milliseconds
+        end_time = int(segment_end * 1000)  # Convert to milliseconds
+        audio_clip.subclip(start_time, end_time).write_audiofile(f"segment_{start_time}_{end_time}.flac")
+        
+        # Transcribe the segment
+        transcription = pipe(f"segment_{start_time}_{end_time}.flac")
+        print(transcription)
+        
+        # Delete the temporary audio file
+        os.remove(f"segment_{start_time}_{end_time}.flac")
+    
+    # Calculate segments
+    total_duration = len(audio_clip)
+    num_segments = int(total_duration / 600)  # Assuming 10 minutes per segment
+    
+    # Process each segment
+    for i in range(num_segments):
+        start_time = i * 600  # Start time of the segment (in seconds)
+        end_time = start_time + 600  # End time of the segment (in seconds)
+        process_audio_segment(start_time, end_time)
 
-audio_segment = audio_grabber.grab()
-audio_segment.
+if __name__ == "__main__":
+    video_path = "path_to_your_video.mp4"  # Replace with your video path
+    pipe = pipeline("automatic-speech-recognition", model="openai/whisper-large-v3")
+    extract_audio_and_transcribe(video_path)
